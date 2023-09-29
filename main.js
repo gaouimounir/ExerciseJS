@@ -17,6 +17,7 @@ function startEngine() {
     document.getElementById("temperature-indicator").innerHTML = temperature;
     document.getElementById("rpm-value").innerHTML = rpm;
     document.getElementById("fuel-indicator").innerHTML = fuel;
+    document.getElementById("rpm-needle").style.rotate = "20deg";
 
     const fuelDebit = 0.1;
     const fuelInterval = 1000;

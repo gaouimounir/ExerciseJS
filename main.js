@@ -41,3 +41,10 @@ function stopEngine() {
   updateValues();
   clearInterval(timer);
 }
+
+function refuel() {
+  kmValue = 0;
+  document.getElementById("km-indicator").innerHTML = kmValue;
+  fuelValue = 60;
+  document.getElementById("fuel-indicator").innerHTML = fuelValue;
+}

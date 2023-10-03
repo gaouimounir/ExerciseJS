@@ -4,12 +4,25 @@ let rpm = 0;
 let temperature = 0;
 let kilometrage = 0;
 
-/* let fuel = document.getElementById("fuel-indicator");
-let speed = document.getElementById("speed-needle");
-let rpm = document.getElementById("rpm-value");
-let temperature = document.getElementById("temperature-indicator");
-let kilometrage = document.getElementById("km-indicator"); */
+function updateValues() {
+  // Régime moteur
+  let rpmNeedleElement = document.getElementById("rpm-needle");
+  let rpmNeedleAngle = ConvertRpmToDegre(rpmValue);
+  document.getElementById("rpm-value").innerHTML = rpmValue;
+  rpmNeedleElement.style.transform = `rotate(${rpmNeedleAngle}deg)`;
 
+  // Vitesse
+  let speedNeedleElement = document.getElementById("speed-needle");
+  let speedNeedleAngle = ConvertSpeedToDegre(speedValue);
+  document.getElementById("speed-value").innerHTML = speedValue;
+  speedNeedleElement.style.transform = `rotate(${speedNeedleAngle}deg)`;
+
+  // Temperature
+  document.getElementById("temperature-indicator").innerHTML = temperatureValue;
+
+  // Niveau de carburant
+  document.getElementById("fuel-indicator").innerHTML = fuelValue;
+}
 function startEngine() {
   if (fuel > 0) {
     temperature = 50;

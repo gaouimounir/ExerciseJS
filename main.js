@@ -30,3 +30,14 @@ function startEngine() {
     }, fuelInterval);
   }
 }
+
+function stopEngine() {
+  document.getElementById("start-button").style.display = "block";
+  document.getElementById("stop-button").style.display = "none";
+  document.getElementById("refuel").disabled = false;
+  rpmValue = 0;
+  speedValue = 0;
+  temperatureValue = "--";
+  updateValues();
+  clearInterval(timer);
+}
